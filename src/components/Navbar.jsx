@@ -1,29 +1,28 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 function Navbar(){
     return(
-        <ul className="flex">
+        <ul className="flex text-gray-500 text-xl">
             <li>
-            <a className="m-7" href="/">Home</a>
+            <a className="m-2.5" href="/">Home</a>
             </li>
             <li>
-            <a className="m-7" href="/about">About</a>
+            <a className="m-2.5" href="/about">About</a>
             </li>
             <li>
-            <a className="m-7" href="/explore">Explore</a>
+            <a className="m-2.5" href="/explore">Explore</a>
             </li>
             <li>
-            <a className="m-7" href="/signup">Sign Up</a>
+            <a className="m-2.5" href="/signup">Sign Up</a>
             </li>
             <li>
-            <a className="m-7" href="/login">Login</a>
+            <a className="m-2.5" href="/login">Login</a>
             </li>
             <li>
-            <a className="m-7" href="/contact">Contact</a>
+            <a className="m-2.5" href="/contact">Contact</a>
             </li>
             <li>
-            <a href="/pricing">Pricing</a>
+            <a className="m-2.5" href="/pricing">Pricing</a>
             </li>
         </ul>
     )

@@ -14,6 +14,8 @@
     "@astrojs/renderer-react": "^0.5.0",
     "@astrojs/tailwind": "^3.1.2",
     "@astrojs/vercel": "^3.2.5",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "astro": "^2.4.5",

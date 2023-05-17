@@ -4,54 +4,44 @@ import Scroll from "../webimages/Scroll.png";
 import Navbar from "./Navbar";
 
 function HomepageIcons() {
-  const [currentImage, setCurrentImage] = useState(Angklung);
+  //in future randomise first load image
+  const [image, setImage] = useState(localStorage.getItem("image") || "Angklung")
   const [imageClicked, setImageClicked] = useState(false);
-  useEffect(() => {
-    const storedImage = localStorage.getItem("currentImage");
-    if (storedImage && (storedImage === Angklung || storedImage === Scroll)) {
-      setCurrentImage(storedImage);
-    } else {
-      setCurrentImage(Angklung);
+
+  useEffect(()=> {
+    if (localStorage.getItem("image") === "Angklung"){
+      setImage("Scroll")
+    } else if(localStorage.getItem("image") === "Scroll"){
+      setImage("Angklung")
     }
-  }, []);
+  },[])
 
-  useEffect(() => {
-    localStorage.setItem("currentImage", currentImage);
-  }, [currentImage]);
+  useEffect(()=>{
+    localStorage.setItem("image", image) 
+  },[image])
 
-  useEffect(() => {
-    const handleRefresh = () => {
-      setCurrentImage((prevImage) => {
-        if (prevImage === Angklung) {
-          return Scroll;
-        } else {
-          return Angklung;
-        }
-      });
-    };
+const handleClick = () => {
+  setImageClicked(!imageClicked)
+}
 
-    window.addEventListener("beforeunload", handleRefresh);
-
-    return () => {
-      window.removeEventListener("beforeunload", handleRefresh);
-    };
-  }, []);
-
-  const handleClick = () => {
-    setImageClicked(!imageClicked)
-  }
-
-  return (
-    <div>
-      {currentImage == Angklung &&  
-        <><button onClick={handleClick}><img src={currentImage} className = "h-28" alt="Current Image" /></button>
-        <Navbar className= {imageClicked ? "hidden" : "hidden"} /></>
-      }
-      
-      {currentImage == Scroll &&  <button onClick={handleClick}><img src={currentImage}  className = "w-24" alt="Current Image" /></button>}
-  
-    </div>
-  );
+return (
+  <>
+    {image == "Angklung" && 
+      <div className="flex flex-col justify-center content-center">
+        <div className="flex justify-center mb-7"><img src={Angklung} onClick={handleClick} className = "h-28 cursor-pointer" alt="Current Image" /></div>
+        
+        <div className={imageClicked ? "visible animate-fadeIn " :"invisible"}><Navbar/></div>
+      </div>
+    }
+    
+    {image == "Scroll" &&  
+      <div className="flex flex-col justify-center content-center">
+        <div className="flex justify-center mb-7"><img src={Scroll} onClick={handleClick} className = "w-24 cursor-pointer" alt="Current Image" /></div>
+        <div className={imageClicked ? "visible animate-fadeIn" :"invisible"}><Navbar/></div>
+      </div>
+    }
+  </>
+);
 }
 
 export default HomepageIcons;

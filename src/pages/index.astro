@@ -1,14 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HomepageIcons from '../components/HomepageIcons.jsx';
-import Navbar from '../components/Navbar.jsx';
 ---
 
 <Layout title="Welcome to Astro.">
-	HOMEPAGE - Hello World
-	<div class = "flex flex-column h-full justify-center items-center">
+	<div class = "flex flex-column h-full justify-center content-center">
 		<HomepageIcons client:load/>
-		<!-- <Navbar client:load/> -->
 	</div>
 </Layout>
 

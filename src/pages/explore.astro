@@ -1,10 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { fa0 } from "@fortawesome/free-solid-svg-icons";
+import { fa1 } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 ---
 
 <Layout title="Welcome to Astro.">
 	Explore Page
+	<div class="flex h-full justify-between items-center">
+		<div class="flex h-60 text-gray-500 m-36">
+			<FontAwesomeIcon icon={fa0} />
+		</div>
+		<div class="flex h-60 text-gray-500 m-36">
+			<FontAwesomeIcon icon={fa1} />
+		</div>
+	</div>
 </Layout>
+
 
 <style>
 	
