@@ -27,7 +27,7 @@ const handleClick = () => {
 return (
   <>
     {image == "Angklung" && 
-      <div className="flex flex-col justify-center content-center">
+      <div className="flex grow flex-col justify-center content-center">
         <div className="flex justify-center mb-7"><img src={Angklung} onClick={handleClick} className = "h-28 cursor-pointer" alt="Current Image" /></div>
         
         <div className={imageClicked ? "visible" :"invisible"}><Navbar/></div>
@@ -35,7 +35,7 @@ return (
     }
     
     {image == "Scroll" &&  
-      <div className="flex flex-col justify-center content-center">
+      <div className="flex grow flex-col justify-center content-center">
         <div className="flex justify-center mb-7"><img src={Scroll} onClick={handleClick} className = "w-24 cursor-pointer" alt="Current Image" /></div>
         <div className={imageClicked ? "visible" :"invisible"}><Navbar/></div>
       </div>

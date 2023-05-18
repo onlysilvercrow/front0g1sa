@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar(){
     return(
-        <ul className="flex text-gray-500 text-xl">
+        <ul className="flex grow justify-center text-gray-500 text-xl">
             <li>
             <a className="m-2.5" href="/">Home</a>
             </li>
