@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Rainbow from "../webimages/Rainbow.jpeg";
+---
+
+<Layout title="Welcome to Astro.">
+    <div class="flex grow text-center items-center">
+        <div class="w-6/12 text-gray-500 text-2xl">
+            <a href = "/text"><strong>Text Mode</strong></a>
+        </div>
+        <div class="w-6/12 h-6/12">
+            <a href = "/art"><img src={Rainbow} alt="Rainbow Background" /></a>
+        </div>   
+    </div>
+
+</Layout>
+
+
+<style>
+	
+</style>

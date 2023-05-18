@@ -30,14 +30,14 @@ return (
       <div className="flex flex-col justify-center content-center">
         <div className="flex justify-center mb-7"><img src={Angklung} onClick={handleClick} className = "h-28 cursor-pointer" alt="Current Image" /></div>
         
-        <div className={imageClicked ? "visible animate-fadeIn " :"invisible"}><Navbar/></div>
+        <div className={imageClicked ? "visible" :"invisible"}><Navbar/></div>
       </div>
     }
     
     {image == "Scroll" &&  
       <div className="flex flex-col justify-center content-center">
         <div className="flex justify-center mb-7"><img src={Scroll} onClick={handleClick} className = "w-24 cursor-pointer" alt="Current Image" /></div>
-        <div className={imageClicked ? "visible animate-fadeIn" :"invisible"}><Navbar/></div>
+        <div className={imageClicked ? "visible" :"invisible"}><Navbar/></div>
       </div>
     }
   </>
