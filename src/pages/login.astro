@@ -1,9 +1,59 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+<script>
+	import { login } from "../../lib/appwrite";
+	const formElem: HTMLFormElement | null = document.querySelector("form");
+  
+	formElem?.addEventListener("submit", (e) => {
+	  e.preventDefault();
+	  const emailElem: HTMLInputElement | null =
+		formElem.querySelector('input[id="email"]');
+	  const passwordElem: HTMLInputElement | null = formElem.querySelector(
+		'input[id="password"]'
+	  );
+	  const email = emailElem?.value;
+	  const password = passwordElem?.value;
+  
+	  if (!email) {
+		alert("Email is required.");
+		return;
+	  }
+  
+	  if (!password) {
+		alert("Password is required.");
+		return;
+	  }
+  
+	  if (password.length < 8) {
+		alert("Password must be at least 8 characters long.");
+		return;
+	  }
+	  login(email, password);
+	});
+  </script>
 
 <Layout title="Welcome to Astro.">
-	Login Page
+	<div class="flex flex-col grow items-center justify-center">
+    <h1>Login</h1>
+    <form class="flex flex-col items-right">
+		<div class="flex justify-between m-1">
+			<label for="email">Email:</label>
+      		<input id="email" type="email" class="ml-1 border-solid border-2 border-black" required />
+		</div>
+		<div class="flex justify-between m-1">
+      		<label for="password">Password:</label>
+      		<input id="password" type="password" class="ml-1  border-solid border-2 border-black" required />
+		</div>
+      <button type="submit" class="border-solid border-2 border-black"
+        >Log In</button
+      >
+    </form>
+	<div class="flex flex-col m-1">
+		<p>Dont have an account?</p>
+    	<a href="/signup" style="text-decoration: underline">Click here to Sign Up</a>
+	</div>
+</div>
 </Layout>
 
 <style>
