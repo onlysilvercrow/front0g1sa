@@ -1,8 +1,9 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "target": "ESNext",
+     "target": "ESNext",
     "module": "ESNext",
     // Enable node-style module resolution, for things like npm package imports.
     "moduleResolution": "node",
