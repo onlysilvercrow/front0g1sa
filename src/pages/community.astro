@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout title="Welcome to Astro.">
+    <!-- Data fetched at build can be rendered in HTML -->
+    <div class="flex grow">
+        <div id = "render" class = "p-2.5 m-2.5 list-none"></div>
+    </div>
+
+
+</Layout>
+
+<script>
+    const response = await fetch('http://localhost:3500/db');
+    const data = await response.json();
+    const randomUser = data;
+    var list = document.getElementById('render');
+    randomUser.map((letter: string) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = letter;
+        if (list != null){
+            list.appendChild(listItem);
+        }
+        
+    });
+</script>
+<style>
+</style>
